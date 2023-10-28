@@ -15,12 +15,6 @@ class ProfileScreen extends StatelessWidget {
             height: 2000,
             child: Stack(
               children: [
-                //SizedBox(height: 2000,),
-                // SvgPicture.asset(
-                //   'assets/images/people.svg',
-                //   width: 200,
-                //   height: 200,
-                // ),
                 Image.asset(
                   'assets/images/photo_main.png',
                   width: screenSize.width,
@@ -31,9 +25,9 @@ class ProfileScreen extends StatelessWidget {
                   child: Container(
                     height: 1000,
                     width: screenSize.width,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.95),
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(25),
                         topRight: Radius.circular(25),
                       ),
@@ -149,13 +143,29 @@ class ProfileScreen extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 20,),
-                          
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Interests',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(fontSize: 22),
+                              ),
+                              const Text(
+                                'My name is Jessica Parker and I enjoyed meeting new people and finding ways to help them have an uplifting. I enjoyed reading..',
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
                   ),
                 ),
                 Positioned(
+                  left: 0,
+                  right: 0,
                   top: 307.5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -165,7 +175,7 @@ class ProfileScreen extends StatelessWidget {
                         height: 70.0,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.grey,
+                          color: Colors.white,
                         ),
                         child: const Icon(
                           Icons.cancel_outlined,
@@ -197,7 +207,7 @@ class ProfileScreen extends StatelessWidget {
                         height: 70.0,
                         decoration: const BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.grey,
+                          color: Colors.white,
                         ),
                         child: const Icon(
                           Icons.star,
