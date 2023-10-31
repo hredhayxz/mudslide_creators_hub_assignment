@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mudslide_creators_hub_assignment/presentation/ui/widgets/interest_card.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key});
+
+  List<String> interestData = [
+    'Travelling',
+    'Books',
+    'Music',
+    'Dancing',
+    'Modeling'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
-            height: 2000,
+            height: 1360,
             child: Stack(
               children: [
                 Image.asset(
@@ -23,7 +31,6 @@ class ProfileScreen extends StatelessWidget {
                 Positioned(
                   top: 350,
                   child: Container(
-                    height: 1000,
                     width: screenSize.width,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.95),
@@ -37,7 +44,9 @@ class ProfileScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(height: 50,),
+                          const SizedBox(
+                            height: 50,
+                          ),
                           Row(
                             children: [
                               Column(
@@ -63,7 +72,8 @@ class ProfileScreen extends StatelessWidget {
                                   width: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(10.0)),
                                     border: Border.all(
                                       color: Colors.grey.shade300,
                                       width: 1.0,
@@ -77,7 +87,9 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 20,),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -96,7 +108,8 @@ class ProfileScreen extends StatelessWidget {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: Colors.red.shade50,
-                                        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(10.0)),
                                       ),
                                       child: const Padding(
                                         padding: EdgeInsets.all(8.0),
@@ -119,7 +132,9 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 20,),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -134,15 +149,20 @@ class ProfileScreen extends StatelessWidget {
                                 'My name is Jessica Parker and I enjoyed meeting new people and finding ways to help them have an uplifting. I enjoyed reading..',
                               ),
                               InkWell(
-                                onTap: (){},
+                                onTap: () {},
                                 child: const Text(
                                   'Read more',
-                                  style: TextStyle(color: Colors.red, fontSize: 17,fontWeight: FontWeight.bold),
+                                  style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
                             ],
                           ),
-                          const SizedBox(height: 20,),
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -153,8 +173,77 @@ class ProfileScreen extends StatelessWidget {
                                     .titleLarge
                                     ?.copyWith(fontSize: 22),
                               ),
-                              const Text(
-                                'My name is Jessica Parker and I enjoyed meeting new people and finding ways to help them have an uplifting. I enjoyed reading..',
+                              SizedBox(
+                                height: 100,
+                                child: GridView.builder(
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3,
+                                    childAspectRatio: 2.5,
+                                  ),
+                                  itemCount: interestData.length,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return InterestCard(
+                                      interest: interestData[index],
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Gallery',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleLarge
+                                        ?.copyWith(fontSize: 22),
+                                  ),
+                                  const Spacer(),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: const Text(
+                                      'See all',
+                                      style: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              SizedBox(
+                                height: 500,
+                                child: GridView.builder(
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    mainAxisSpacing: 10,
+                                    crossAxisSpacing: 10,
+                                    //childAspectRatio: 2.5,
+                                  ),
+                                  itemCount: 10,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return ClipRRect(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                      child: Image.asset(
+                                        'assets/images/photo_main.png',
+                                        fit: BoxFit.fitWidth,
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                             ],
                           ),
