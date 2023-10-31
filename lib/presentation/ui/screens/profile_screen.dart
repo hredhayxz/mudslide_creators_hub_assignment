@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mudslide_creators_hub_assignment/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:mudslide_creators_hub_assignment/presentation/ui/widgets/interest_card.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -259,49 +260,62 @@ class ProfileScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 70.0,
-                        height: 70.0,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
-                        child: const Icon(
-                          Icons.cancel_outlined,
-                          color: Colors.amber,
-                          size: 35.0, // Adjust the size as needed
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 85.0,
-                        height: 85.0,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.red,
-                        ),
-                        child: const Icon(
-                          Icons.favorite,
-                          color: Colors.white,
-                          size: 40.0,
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: 70.0,
+                          height: 70.0,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white,
+                          ),
+                          child: const Icon(
+                            Icons.cancel_outlined,
+                            color: Colors.amber,
+                            size: 35.0, // Adjust the size as needed
+                          ),
                         ),
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Container(
-                        width: 70.0,
-                        height: 70.0,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const MainBottomNavScreen(),
+                          ));
+                        },
+                        child: Container(
+                          width: 85.0,
+                          height: 85.0,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.red,
+                          ),
+                          child: const Icon(
+                            Icons.favorite,
+                            color: Colors.white,
+                            size: 40.0,
+                          ),
                         ),
-                        child: const Icon(
-                          Icons.star,
-                          color: Colors.deepPurple,
-                          size: 35.0,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: 70.0,
+                          height: 70.0,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.white,
+                          ),
+                          child: const Icon(
+                            Icons.star,
+                            color: Colors.deepPurple,
+                            size: 35.0,
+                          ),
                         ),
                       ),
                     ],

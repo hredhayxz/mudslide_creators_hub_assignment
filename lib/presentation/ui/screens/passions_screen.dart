@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mudslide_creators_hub_assignment/presentation/ui/screens/friends_screen.dart';
 import 'package:mudslide_creators_hub_assignment/presentation/ui/widgets/passions_card.dart';
 
 class PassionsScreen extends StatelessWidget {
@@ -49,7 +50,11 @@ class PassionsScreen extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const FriendsScreen(),
+              ));
+            },
             child: const Text(
               'Skip',
               style: TextStyle(color: Colors.red, fontSize: 17),

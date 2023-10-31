@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mudslide_creators_hub_assignment/presentation/ui/screens/profile_screen.dart';
 
 class FriendsScreen extends StatelessWidget {
   const FriendsScreen({super.key});
@@ -11,7 +12,11 @@ class FriendsScreen extends StatelessWidget {
       appBar: AppBar(
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ProfileScreen(),
+              ));
+            },
             child: const Text(
               'Skip',
               style: TextStyle(color: Colors.red, fontSize: 17),
