@@ -56,16 +56,16 @@ flutter run
 
 ## Used Packages
 
-CraftyBay integrates the following packages to enhance functionality:
+This app integrates the following packages to enhance functionality:
 - `flutter_svg: ^2.0.7`: A Flutter package for rendering SVG (Scalable Vector Graphics) images. It allows you to easily display and manipulate SVG files in your Flutter application.
 
 ## Project Directory Structure
 
-The CraftyBay directory structure is organized as follows:
+The app directory structure is organized as follows:
 
 ```
 
-craftybay_ecommerce_application/
+mudslide_creators_hub_assignment/
 ├── assets/
 │   └── images/
 │       ├── people.svg
